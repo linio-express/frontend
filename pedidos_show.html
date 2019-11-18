@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+    <!--<link rel="shortcut icon" type="image/png" href="#" />
+    <link rel="apple-touch-icon" sizes="128x128" href="#">
+    <link rel="icon" sizes="192x192" href="#">-->
+    <link rel="stylesheet" href="custom.css" />
+    <title>Linio - Compra por internet</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-light shadow">
+
+        <!-- Dropdown menu-->
+        <a href="#">
+            <i class="fas fa-bars fa-secondary fa-2x"></i>
+        </a>
+
+        <!-- Enlace para ir a inicio -->
+        <a href="#">
+
+            <!-- Logo de Linio -->
+            <img class="mt-1 scale"
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Linio_logo_refresh.svg/1200px-Linio_logo_refresh.svg.png"
+                style="height:47px;">
+        </a>
+
+        <!-- Solo se mostrara este div en pantallas grandes -->
+        <div class="d-none d-md-block mt-2 mb-2">
+            <!-- Formulario de búsqueda -->
+            <form class="form-inline">
+                <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                        <!-- Selector de categorías -->
+                        <select class="custom-select" id="inputGroupSelect02"
+                            style="border-radius: 50px 0px 0px 50px; border-width: 2px 1px 2px 2px; height:48px; border-color: #707070;">
+                            <option selected>Todos</option>
+                            <option value="1">Celulares</option>
+                            <option value="2">Mascotas</option>
+                            <option value="3">etc.</option>
+                        </select>
+                    </div>
+                    <input class="form-control" type="search" placeholder="Buscar productos..." aria-label="Search"
+                        style="border-radius: 0px 0px 0px 0px; border-width: 2px 0px 2px 1px; min-width: 300px;">
+                    <div class=" input-group-append">
+                        <button type="button" name="button"
+                            style="border-radius: 0px 50px 50px 0px; border-width: 2px 2px 2px 0px; border-color: #707070; background-color: white;">
+                            <i class="fas fa-primary fa-search mr-2" style="font-size: 24px;"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Enlace a página de carrito -->
+        <a href="#">
+            <i class="fas fa-secondary fa-shopping-cart fa-2x"></i>
+        </a>
+
+        <!-- El div solo se mostrará en móviles -->
+        <div class="d-block d-md-none container w-100 mt-3 mb-3">
+            <!-- Formulario de búsqueda -->
+            <form class="form-inline w-100">
+                <div class="input-group w-100">
+                    <div class="input-group-prepend">
+                        <!-- selector de categorías -->
+                        <select class="custom-select pl-3" id="inputGroupSelect02"
+                            style="border-radius: 50px 0px 0px 50px; border-width: 2px 1px 2px 2px; border-color: #707070;">
+                            <option selected>Todos</option>
+                            <option value="1">Celulares</option>
+                            <option value="2">Mascotas</option>
+                            <option value="3">etc.</option>
+                        </select>
+                    </div>
+                    <input class="form-control" type="search" placeholder="Buscar productos..." aria-label="Search"
+                        style="border-radius: 0px 0px 0px 0px; border-width: 2px 0px 2px 1px; border-color: #707070;">
+                    <div class="input-group-append">
+                        <button type="button" name="button"
+                            style="border-radius: 0px 50px 50px 0px; border-width: 2px 2px 2px 0px; border-color: #707070; background-color: white;">
+                            <i class="fas fa-primary fa-search mr-1" style="font-size: 20px;"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Sección de pedidos -->
+    <section class="container mx-auto px-4" style="max-width:1080px;">
+        <!-- Opcíon para regresar a todos los pedidos -->
+        <div class="mt-4 ml-0">
+            <a class="secondary" href="pedidos_index.html">
+                <h4 class="d-inline"><i class="fas fa-angle-left pr-2"></i>Volver a mis pedidos</h4>
+            </a>
+        </div>
+        <div class="row mt-4">
+            <div class="col text-dark">
+                <h3 style="font-weight: 700;">Pedido #000001</h3>
+            </div>
+            <div class="col text-right">
+                <h4>11/12/2019</h4>
+            </div>
+
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-4">
+                <i class="fas fa-box-open fa-4x secondary ml-5"></i>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-4"></div>
+        </div>
+        <div class="progress" style="height: 10px;">
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 20%;" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-4">
+                <h5 class="ml-5">En progreso</h5>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-4"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <!-- Campo para ver detalles de envío -->
+                <div class="card text-dark mt-4 p-4">
+                    <h4 class="" style="font-weight: 600;">Envío</h4>
+                    <div class="row mt-2">
+                        <div class="col-2 text-center my-auto">
+                            <i class="fas fa-exclamation-triangle fa-3x text-warning"></i>
+                        </div>
+                        <div class="col-10 my-auto">
+                            <h5>No has ingresado tu dirección todavía</h5>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary mt-4 btn-block w-75 mx-auto" style="max-width:250px;"
+                        data-toggle="modal" data-target="#AgregarDireccion">
+                        <strong class="text-light">Ingresar dirección</strong>
+                    </button>
+                </div>
+                <!-- Campo para cancelar pedido-->
+                <div class="card text-dark mt-4 p-4">
+                    <h4 class="" style="font-weight: 600;">Cancelación</h4>
+                    <h5 class="mt-2">Puedes cancelar tu orden sin costo alguno. No se te efectuó ningun cobro.</h5>
+                    <button class="btn btn-outline-secondary mt-4 btn-block w-75 mx-auto" style="max-width:250px;"
+                        data-toggle="modal" data-target="#CancelarPedido">
+                        <strong>Cancelar pedido</strong>
+                    </button>
+                </div>
+            </div>
+            <div class="col-7">
+                <!-- Campo para ver productos en el pedido-->
+                <div class="card text-dark mt-4 p-4">
+                    <h4 class="" style="font-weight: 600;">Productos</h4>
+                    <div class="row mt-4">
+                        <div class="col-sm-3 text-center">
+                            <img style="max-width:300px;"
+                                src="https://linio-express.s3-sa-east-1.amazonaws.com/productos/iphone11pro/iphone-11-pro-midnight-green-select-2019.png"
+                                class="w-75 my-auto mx-auto" alt="...">
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="row">
+                                <div class="col-md-7 col-6">
+                                    <h5 class="d-sm-block d-none" style="font-weight: 600;">Apple iPhone 11 Pro
+                                        64GB Verde</h5>
+                                    <p class="d-sm-none d-block" style="font-weight: 600;">Apple iPhone 11 Pro
+                                        64GB Verde</p>
+                                </div>
+                                <div class="col-md-5 col-6">
+                                    <h5 class="d-sm-block d-none" style="font-weight: 600;">1 x S/ 2 890.00</h5>
+                                    <p class="d-sm-none d-block" style="font-weight: 600;">1 x S/ 2 890.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress mt-4 mb-4" style="height:2px;">
+                        <div class="progress-bar" role="progressbar" style="width: 100%; background-color:#C9C9C9;"
+                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9">
+                            <div class="row">
+                                <div class="col-md-7 col-6">
+                                    <h5 class="d-sm-block d-none" style="font-weight: 600;">Subtotal</h5>
+                                    <p class="d-sm-none d-block" style="font-weight: 600;">Subtotal</p>
+                                    <h5 class="d-sm-block d-none" style="font-weight: 600;">Envío</h5>
+                                    <p class="d-sm-none d-block" style="font-weight: 600;">Envío</p>
+                                </div>
+                                <div class="col-md-5 col-6">
+                                    <h5 class="d-sm-block d-none" style="font-weight: 600;">S/ 3 780.00</h5>
+                                    <p class="d-sm-none d-block" style="font-weight: 600;">S/ 3 780.00</p>
+                                    <h5 class="d-sm-block d-none" style="font-weight: 600;">S/ 20.00</h5>
+                                    <p class="d-sm-none d-block" style="font-weight: 600;">S/ 20.00</p>
+                                </div>
+                            </div>
+                            <div class="progress mt-4 mb-4" style="height:2px;">
+                                <div class="progress-bar" role="progressbar"
+                                    style="width: 100%; background-color:#C9C9C9;" aria-valuenow="100" aria-valuemin="0"
+                                    aria-valuemax="100">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-7 col-6">
+                                    <h5 class="d-sm-block d-none" style="font-weight: 600;">Total</h5>
+                                    <p class="d-sm-none d-block" style="font-weight: 600;">Total</p>
+                                </div>
+                                <div class="col-md-5 col-6">
+                                    <h5 class="d-sm-block d-none" style="font-weight: 600;">S/ 3 800.00</h5>
+                                    <p class="d-sm-none d-block" style="font-weight: 600;">S/ 3 800.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress mt-4 mb-4" style="height:2px;">
+                        <div class="progress-bar" role="progressbar" style="width: 100%; background-color:#C9C9C9;"
+                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3 text-center">
+                            <div class="container mx-auto my-auto text-center">
+                                <i class="far fa-clock text-warning fa-5x"></i>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <h4><strong style="color: #737373;">Estado de pago:</strong><strong><br>Pendiente</strong>
+                            </h4>
+                        </div>
+                    </div>
+                    <button class="btn btn-lg btn-primary mt-4 btn-block w-75 mx-auto" style="max-width:250px;"
+                        data-toggle="modal" data-target="#ElegirMetodoDePago">
+                        <strong class="text-light">Pagar pedido</strong>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de formulario para agregar dirección -->
+        <div class="modal fade" id="AgregarDireccion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content text-dark px-4"
+                    style="border-color: #FF5500; border-radius: 15px; border-width: 5px;">
+                    <div class="modal-body" style="background-color: white; border-radius: 15px;">
+
+                        <!-- Botón para cerrar modal -->
+                        <button type="button" class="close mt-1 mr-1" data-dismiss="modal" aria-label="Close">
+                            <i class="fas fa-times"></i>
+                        </button><br>
+
+                        <!-- Título de modal -->
+                        <h4 class="mt-1 text-center" style="font-weight: 600;">¿Dónde te entregamos tus productos?
+                        </h4>
+
+                        <!-- Formulario de dirección -->
+                        <form class="form mx-auto w-100 mt-4" role="form" autocomplete="off" id="formulario_direccion"
+                            novalidate="" method="POST">
+
+                            <!-- Input de distrito -->
+                            <div class="form-group">
+                                <select class="form-control" id="distrito" name="distrito">
+                                    <option selected>Distrito</option>
+                                    <option>San Miguel</option>
+                                    <option>San Borja</option>
+                                    <option>Miraflores</option>
+                                    <option>Surco</option>
+                                </select>
+                            </div>
+
+                            <!-- Input de dirección -->
+                            <input type="text" class="form-control mt-3" name="email" id="email" required
+                                placeholder="Dirección"
+                                oninvalid="this.setCustomValidity('Ingresa tu correo electrónico')"
+                                oninput="this.setCustomValidity('')" />
+
+
+                            <!-- Botón para enviar formulario-->
+                            <button class="btn btn-lg btn-primary mt-4 mb-4 btn-block w-75 mx-auto" href="home.html">
+                                <strong class="text-light">Confirmar</strong>
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de confirmación de cancelación de pedido -->
+        <div class="modal fade" id="CancelarPedido" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content text-dark"
+                    style="border-color: #666666; border-radius: 15px; border-width: 5px;">
+                    <div class="modal-body" style="background-color: white; border-radius: 15px;">
+
+                        <!-- Botón para cerrar modal -->
+                        <button type="button" class="close mt-1 mr-1" data-dismiss="modal" aria-label="Close">
+                            <i class="fas fa-times"></i>
+                        </button><br>
+
+                        <!-- Título de modal -->
+                        <h4 class="mt-1 text-center" style="font-weight: 600;">¿Seguro que deseas cancelar este pedido?
+                        </h4>
+
+                        <!-- Informacion sobre condiciones de cancelación -->
+                        <h5 class="mt-3 text-center" style="font-weight: 600;">No se te efectuará ningún cobro.
+                        </h5>
+
+                        <!-- Contenido-->
+                        <form class="w-100 text-center mt-4" action="post">
+                            <button class="btn btn-danger w-75 mx-auto" style="max-width: 225px; min-width: 125px;"
+                                href="#">
+                                <strong>Cancelar pedido</strong>
+                            </button>
+                            <div class="container mt-3 mb-3 mx-0 px-0 text-center">
+                                <button class="btn btn-outline-secondary w-75 mx-auto"
+                                    style="max-width: 225px; min-width: 125px;" href="#" data-dismiss="modal"
+                                    aria-label="Close">
+                                    <strong>Regresar</strong>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para elegir método de pago -->
+        <div class="modal fade" id="ElegirMetodoDePago" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content text-dark px-4"
+                    style="border-color: #FF5500; border-radius: 15px; border-width: 5px;">
+                    <div class="modal-body" style="background-color: white; border-radius: 15px;">
+
+                        <!-- Botón para cerrar modal -->
+                        <button type="button" class="close mt-1 mr-1" data-dismiss="modal" aria-label="Close">
+                            <i class="fas fa-times"></i>
+                        </button><br>
+
+                        <!-- Título de modal -->
+                        <h4 class="mt-1 text-center" style="font-weight: 600;">Elige tu método de pago
+                        </h4>
+
+                        <!-- Formulario de método de pago -->
+                        <form class="form mx-auto w-100 mt-4" role="form" autocomplete="off"
+                            id="formulario_metodo_de_pago" novalidate="" method="POST">
+                            <div class="form-group">
+                                <div class="btn-group-toggle m-auto text-center w-100" data-toggle="buttons">
+                                    <label class="btn btn-lg btn-outline-secondary rounded w-100 border">
+                                        <input type="radio" name="options" id="3horas" autocomplete="off">
+                                        <i class="far fa-credit-card mr-2"></i>Tarjeta de
+                                        crédito/débito
+                                    </label><br>
+                                    <label class="btn btn-lg btn-outline-secondary rounded w-100 border mt-2">
+                                        <input type="radio" name="options" id="5horas" autocomplete="off"><i
+                                            class="fas fa-money-bill-wave mr-2"></i>Efectivo
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Botón para enviar formulario-->
+                            <button class="btn btn-lg btn-primary mt-4 mb-4 btn-block w-75 mx-auto" href="home.html">
+                                <strong class="text-light">Seleccionar</strong>
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white mt-4" style="background-color:#2E3133;">
+        <div class="container">
+            <div class="row px-2 py-5">
+                <div class="col-md-6 p-3">
+                    <h5>Acerca de Linio</h5>
+                    <p style="color: #B3B3B3;" class="">Lima, Perú<br>
+                        +51 954 186 451<br>
+                        contacto@manos.pe</p>
+                    <p>Copyright © 2018 Manos. Todos los derechos reservados. </p>
+                </div>
+                <div class="col-md-3 p-3">
+                    <h5>Secciones </h5>
+                    <a style="color: #B3B3B3;" href="#">Lo que hacemos</a><br>
+                    <a style="color: #B3B3B3;" href="faqs.html">Preguntas Frecuentes</a><br>
+                    <a style="color: #B3B3B3;" href="privacy.html">Política de Privacidad</a><br>
+                    <a style="color: #B3B3B3;" href="terms.html">Legal</a>
+                </div>
+                <div class="col-md-3 p-3">
+                    <h5>Síguenos:</h5>
+                    <a style="color: #8b8b8b;" href="https://www.facebook.com/ManosApp/" target="_blank"><i
+                            class="fab fa-facebook-square fa-2x m-2"></i></a>
+                    <a style="color: #B3B3B3;" href="https://www.instagram.com/manosapp/" target="_blank"><i
+                            class="fab fa-instagram fa-2x m-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <footer style="background-color: black;" class="text-center w-100 text-light">
+        <p class="py-3">Hecho por estudiantes de la Universidad Del Pacífico con ❤.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+</body>
